@@ -105,12 +105,27 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="hero-content">
-                    <img src="img/Stefani_and_Stoil_2.png" alt="Image" class="img-fluid centered-image">
+                    <img src="img/Stefani_and_Stoil_2.png" alt="Image" class="img-fluid"
+                         style="display: block; margin-left: auto; margin-right: auto; max-width: 100%; height: auto;">
+
+                    <!-- For Android/iOS Devices (width 767px or less) -->
+                    <div style="display: none; visibility: hidden; width: 0; height: 0;">
+                        <span id="is-mobile">true</span>
+                    </div>
+
+                    <script>
+                        if (window.innerWidth <= 767) {
+                            const img = document.querySelector('.hero-content img');
+                            img.style.marginLeft = '10%'; // Shift image to the right for mobile
+                            img.style.marginRight = '0';
+                        }
+                    </script>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
 
 
 <!--<section id="invitation" class="section-padding">-->
